@@ -1,0 +1,48 @@
+.login
+{
+	float: right;
+	width: 10%;
+	height: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.bascket
+{
+	float: right;
+	width: 10%;
+	height: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+header
+{
+	background-color: red;
+	width: auto;
+	height: 150px;
+}
+
+.p_sign
+{
+	text-align: center;
+	font-size: 40px;
+	color: white;
+}
+
+.form_log input
+{
+	height: 40px;
+	width: 300px;
+	margin-left: 100px;
+	margin-bottom: 20px;
+	font-size: 30px;
+}
+
+.form_log
+{
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	background-color: orange;
+}
