@@ -1,3 +1,102 @@
+.pool_c
+{
+	width: 12%;
+	float: left;
+}
+
+.pool_php
+{
+	width: 14%;
+	float: left;
+}
+
+.pool_cpp
+{
+	width: 14%;
+	float: left;
+}
+
+.pools p
+{
+	position: absolute;
+	margin-left: 400px;
+	margin-top: 25px;
+	color: white;
+	font-size: 100px;
+}
+
+.dropdown_c {background-color: #01DFD7;}
+
+.dropdown_php {background-color: #FE642E;}
+
+.dropdown_cpp {background-color: #2EFE64;}
+
+.dropdown
+{
+	/*padding-right: 50px;*/
+	width: 200px;
+	height: 150px;
+	cursor: pointer;
+	color: white;
+	border: none;
+	font-family: verdana;
+	font-size: 20px;
+	padding: 15px 35px 15px 35px;
+}
+
+.challenge
+{
+	display: none;
+	margin-left: 5px;
+	margin-right: 5px;
+	direction: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 150px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.challenge_c a
+{
+	color: #01DFD7;
+}
+
+.challenge_php a
+{
+	color: #FE642E;
+}
+
+.challenge_cpp a
+{
+	color: #2EFE64;
+}
+
+.pool_cpp
+{
+	margin-left: 680px;
+}
+
+.challenge a
+{
+	display: block;
+	text-decoration: none;
+	padding: 5px 0px 5px 10px;
+	font-family: verdana;
+}
+
+.challenge_c a:hover {background-color: #E0F8F7;}
+
+.challenge_php a:hover {background-color: #F5ECCE;}
+
+.challenge_cpp a:hover {background-color: #E0F8E6;}
+
+.pool_c:hover .challenge_c {display: block;}
+
+.pool_php:hover .challenge_php {display: block;}
+
+.pool_cpp:hover .challenge_cpp {display: block;}
+
 .login
 {
 	float: right;
@@ -18,9 +117,23 @@
 
 header
 {
-	background-color: red;
-	width: auto;
+	background-color: orange;
+	width: 1000px;
 	height: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.p_new
+{
+	text-align: center;
+	color: white;
+}
+
+.a_create_acc
+{
+	text-align: center;
+	font-size: 15px;
 }
 
 .p_sign
@@ -30,7 +143,7 @@ header
 	color: white;
 }
 
-.form_log input
+.form_log input, .form_create input
 {
 	height: 40px;
 	width: 300px;
@@ -39,10 +152,26 @@ header
 	font-size: 30px;
 }
 
+.submit
+{
+	width: 300px;
+	height: 40px;
+}
+
 .form_log
 {
 	width: 500px;
 	height: 500px;
 	margin: auto;
 	background-color: orange;
+	margin-top: 100px;
+}
+
+.form_create
+{
+	width: 500px;
+	height: auto;
+	margin: auto;
+	background-color: orange;
+	margin-top: 100px;
 }
