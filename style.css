@@ -1,3 +1,116 @@
+.item_img
+{
+	float: left;
+	width: 50%;
+	height: 300px;
+}
+
+.item button
+{
+	width: 150px;
+	height: 100px;
+	font-size: 25px;
+	margin-left: 10px;
+	color: orange;
+}
+
+.item label
+{
+	padding-left: 10px;
+	font-size: 30px;
+}
+
+.item
+{
+	width: 100%;
+	display: inline-block;
+	padding: 5px;
+}
+
+.list {
+	width: 1000px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	background-color: #E0F8F7;
+}
+
+.img-holder img
+{
+	width: 1000px;
+	height: 400px;
+}
+
+.sldr-holder {
+	margin-left: auto;
+	margin-right: auto;
+    width: 1000px;
+    height: 400px;
+    background-color: #696969;
+    margin-top: 0px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.img-holder {
+    width: 3000px;
+    background-color: #f1f1f1;
+    height: 400px;
+    clear: both;
+    position: relative;
+    transition: left 2s;
+}
+
+.sldr-img {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+#sldr-img-1:target ~ .img-holder {
+    left: 0px;
+}
+
+#sldr-img-2:target ~ .img-holder {
+    left: -1000px;
+}
+
+#sldr-img-3:target ~ .img-holder {
+    left: -2000px;
+}
+
+.button-holder {
+    position: relative;
+    top: -20px;
+}
+
+.sldr-change-1, .sldr-change-2, .sldr-change-3 {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.button-holder .sldr-change-1 {
+    background-color: grey;
+}
+
+#sldr-img-2:target ~ .button-holder .sldr-change-1,
+#sldr-img-3:target ~ .button-holder .sldr-change-1 {
+    background-color: white;
+}
+
+#sldr-img-2:target ~ .button-holder .sldr-change-2 {
+    background-color: grey;
+}
+
+#sldr-img-3:target ~ .button-holder .sldr-change-3 {
+    background-color: grey;
+}
+
 .pool_c
 {
 	width: 12%;
@@ -19,7 +132,7 @@
 .pools p
 {
 	position: absolute;
-	margin-left: 400px;
+	margin-left: 200px;
 	margin-top: 25px;
 	color: white;
 	font-size: 100px;

@@ -1,24 +1,29 @@
 <?php
-$csv=array("");
-if (($handle = fopen("log.csv", "r")) !== FALSE) {
-    $csv = fgetcsv($handle, 1000, ",");
-    fclose($handle);
-}
-	if ($_GET['login'] === "admin" && $_GET['passwd'] === "nimda") {
-    	echo "\nADMIN_MODE'\n";
-    }
-    else {
-		$fd = fopen("log.csv", "w");
-		$new_log = array($_GET['login'], $_GET['passwd']);
-		$csv = array_merge($new_log, $csv);
-	    fputcsv($fd, $csv);
-	    fclose($fd);
+session_start();
+function is_user($login, $passwd) {
+	$users = file_get_contents("./data/users");
+	$users = unserialize($users);
+	$pass = hash("whirlpool", $_POST['passwd']);
+	$key = 0;
+	while ($users[$key]) {
+		if ($login === $users[$key]['login']) {
+	  	return (1);
+	  	}
+	  	$key++;
 	}
-	session_start();
-	if ($_GET['login'] && $_GET['passwd'] && $_GET['submit' ] && $_GET['submit'] === "OK") {
-        $_SESSION['login'] = $_GET['login'];
-        $_SESSION['passwd'] = $_GET['passwd'];
-    }
+	return (0);
+}
+session_start();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if (is_user($_POST['login'], $_POST['passwd'])) {
+		$_SESSION['loggued_on_user'] = $_POST['login'];
+		echo $_SESSION['loggued_on_user'];
+		//header("Location: index.php");
+	}
+	else {
+		$_SESSION['loggued_on_user'] = NULL;
+	}
+}
 ?>
 <html>
 <head>
@@ -29,7 +34,7 @@ if (($handle = fopen("log.csv", "r")) !== FALSE) {
 	<div class="form_log">
 		<p class="p_sign">Sign In</p>
 		<hr>
-		<form action="login.php" method="GET">
+		<form action="login.php" method="post">
 			<input type="text" name="login" required>
 			<br>
 			<input type="password" name="passwd" required>
@@ -38,7 +43,7 @@ if (($handle = fopen("log.csv", "r")) !== FALSE) {
 			</a>
 		</form>
 		<hr>
-		<p class="p_sign">New on shop?
+		<p class="p_sign">First on shop?
 			<br>
 			<a class="a_create_acc" href="create_account.php">Create an account</a>
 		</p>

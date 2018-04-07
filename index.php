@@ -1,37 +1,30 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>shop</title>
+	<title>PetShop</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<header>
-		<div class="pools">
-			<div class="pool_c pool">
-				<button class="dropdown_c dropdown">Piscine C</button>
-				<div class="challenge_c challenge">
-					<a href="#">Day</a>
-					<a href="#">Rush</a>
-					<a href="#">EvalExpr</a>
-					<a href="#">Match-N-Match</a>
-					<a href="#">Sastantua</a>
-					<a href="#">BSQ</a>
-					<a href="#">Exam</a>
-				</div>
-			</div>
-			<p>Shop</p>
-			<div class="pool_cpp pool">
-				<button class="dropdown_cpp dropdown">Sign In</button>
-				<div class="challenge_cpp challenge">
-					<a href="login.php">Sign in</a>
-					<a href="create_account.php">Create account</a>
-					<a href="#">About</a>
-				</div>
-			</div>
-		</div>
-
-	</header>
+	<?php include('header.php') ?>
+	<div>
+		<div class="sldr-holder">
+	    	<span id="sldr-img-1"></span>
+	    	<span id="sldr-img-2"></span>
+	    	<span id="sldr-img-3"></span>
+	    	<div class="img-holder">
+	     		<img src="img/1.jpg" class="sldr-img" />
+	     		<img src="img/2.jpg" class="sldr-img" />
+	           	<img src="img/3.jpg" class="sldr-img" />
+	       </div>
+	       <div class="button-holder">
+	           <a href="#sldr-img-1" class="sldr-change-1"></a>
+	           <a href="#sldr-img-2" class="sldr-change-2"></a>
+	           <a href="#sldr-img-3" class="sldr-change-3"></a>
+	    	</div>
+   		</div>
+	</div>
 </body>
 </html>

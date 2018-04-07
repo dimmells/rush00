@@ -9,25 +9,14 @@
 	<div class="form_create">
 		<p class="p_sign">Create account</p>
 		<hr>
-		<form action="login.php" method="GET">
-			First name:<br>
-			<input type="text" name="f_name" required>
-			<br>
-			<hr>
-			Last Name:<br>
-			<input type="text" name="l_name" required>
-			<br>
-			<hr>
-			Login:<br>
+		<form action="add_user.php" method="post">
+			<label>Login:</label><br>
 			<input type="text" name="login" required>
 			<br>
-			<hr>
-			Password:<br>
+			<label>Password:</label><br>
 			<input type="password" name="passwd" required>
-			<hr>
-			<a href="index.php">
-				<input class="submit" type="submit" name="submit" value="Sign In">
-			</a>
+			<input class="submit" type="submit" name="submit" value="Create">
 		</form>
+		<hr>
 	</div>
 </body>
