@@ -13,7 +13,7 @@ while ($users[$key]) {
 if (!$is_exist) {
 	$users[$key]['login'] = $_POST['login'];
 	$users[$key]['passwd'] = $pass;
-	$users[$key]['basket'] = array();
+	$users[$key]['bascket'] = array();
 	$users[$key]['order'] = array();
 	$users = serialize($users);
 	file_put_contents("./data/users", $users);

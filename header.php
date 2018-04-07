@@ -12,7 +12,7 @@
 					<a href="#">category_7</a>
 				</div>
 			</div>
-			<p>PetShop</p>
+			<a href="index.php"><p>PetShop</p></a>
 			<div class="pool_cpp pool">
 				<button class="dropdown_cpp dropdown">Sign In</button>
 				<div class="challenge_cpp challenge">
