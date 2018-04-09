@@ -1,0 +1,30 @@
+#adm_menu li{
+	display: inline;
+	margin-right: 1%;
+}
+
+
+#add_pet
+{
+	color: #00008B;
+	font-size: 24px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.err_message
+{
+	color: #8B0000;
+	font-size: 24px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.title
+{
+	text-align: center;
+	color: #00008B;
+	font-weight: bold;
+	font-family: mono;
+	font-size: 25px;
+}

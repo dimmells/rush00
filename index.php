@@ -8,7 +8,9 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<?php include('header.php') ?>
+	<?php include('header.php');
+//        var_dump($_SESSION);
+    ?>
 	<div>
 		<div class="sldr-holder">
 	    	<span id="sldr-img-1"></span>

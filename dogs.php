@@ -1,6 +1,6 @@
 <?php
 session_start();
-$fd = fopen("./data/pets.csv", 'r');
+$fd = fopen("./db/pets.csv", 'r');
 
 $data = array();
 $i = 0;
@@ -20,10 +20,12 @@ $data = array_filter($data);
 </head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <body>
-	<?php include('header.php'); ?>
+	<?php include('header.php');
+    echo "<h1 style='text-align: center'>DOGS</h1>";
+	?>
 	<div class="list">
 		<?php foreach ($data as $pet) {
-			if ($pet[0] === "Dog") {
+			if ($pet[0] === "dogs") {
 		?>
 		<div class="item">
 		<?php echo "<img class=\"item_img\" src=\"./img/" . $pet[3] . "\">"; ?>

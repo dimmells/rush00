@@ -1,29 +1,34 @@
 <?php
 session_start();
-function is_user($login, $passwd) {
-	$users = file_get_contents("./data/users");
-	$users = unserialize($users);
-	$pass = hash("whirlpool", $_POST['passwd']);
-	$key = 0;
-	while ($users[$key]) {
-		if ($login === $users[$key]['login']) {
-	  	return (1);
-	  	}
-	  	$key++;
-	}
-	return (0);
+include('header.php');
+function check_auth($login, $passwd)
+{
+    $users = file_get_contents("./db/users");
+    if (!$users) return (false);
+    $users = unserialize($users);
+    $pass = hash("sha512", $passwd);
+    foreach ($users as $user_information) {
+        if ($user_information['login'] === $login && $user_information['passwd'] === $pass){
+           echo "ok";
+            return (1);
+        }
+
+    }
+    return (false);
 }
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if (is_user($_POST['login'], $_POST['passwd'])) {
-		$_SESSION['loggued_on_user'] = $_POST['login'];
-		echo $_SESSION['loggued_on_user'];
-		//header("Location: index.php");
-	}
-	else {
-		$_SESSION['loggued_on_user'] = NULL;
-	}
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login']) && isset($_POST['passwd'])) {
+    if (check_auth($_POST['login'], $_POST['passwd'])) {
+        $_SESSION['loged_on_user'] = $_POST['login'];
+          header("Location: index.php");
+    } else {
+        echo "<h1 style='text-align: center'>This is the wrong password. Please try again.</h1>";
+        $_SESSION['loged_on_user'] = NULL;
+        unset($_POST);
+    }
 }
+
 ?>
 <html>
 <head>

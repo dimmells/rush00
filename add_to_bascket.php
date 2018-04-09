@@ -1,23 +1,36 @@
 <?php
 session_start();
-if ($_SESSION['loggued_on_user'] == NULL) {
-  error('To start buy just login');
+if ($_SESSION['loged_on_user'] == NULL) {
+  echo ('To start buy just login');
+  exit (0);
 }
-$users = file_get_contents("./data/users");
+$users = file_get_contents("./db/users");
 $users = unserialize($users);
-foreach ($users as $key => $value) {
-	if ($users[$key]['login'] == $_SESSION['loggued_on_user']) {
+
+foreach ($users as $key=>$value) {
+	if ($value['login'] == $_SESSION['loged_on_user']) {
 		break ;
   }
 }
-if ($_POST['basket']) {
+if ($_POST['bascket']) {
 	$index = count($users[$key]['bascket']);
-	var_dump($_POST['item']);
-	var_dump($key);
 	$users[$key]['bascket'][$index] = $_POST['item'];
-	print_r($users[$key]);
+	echo "echo add item";
+    if (is_order($users[$key]['order'])) {
+        echo "You already buy this animal";
+        header("Location: ".$_SERVER['HTTP_REFERER']);
+    }
+    header("Location: index.php");
 }
 $users = serialize($users);
-file_put_contents("./data/users", $users);
-// header("Location: index.php");
+file_put_contents("./db/users", $users);
+
+function is_order($order)
+{
+    foreach ($order as $item) {
+        if ($item === $_POST['item'])
+            return (true);
+    }
+    return (false);
+}
 ?>
